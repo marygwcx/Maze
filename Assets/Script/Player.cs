@@ -21,4 +21,12 @@ public class Player : MonoBehaviour
         transform.position += new Vector3(x, 0, z).normalized * speed * Time.deltaTime;
 
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            print("Game over");
+            transform.position = startPos;
+        }
+    }
 }
