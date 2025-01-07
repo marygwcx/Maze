@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+                
         var x = Input.GetAxisRaw("Horizontal");
         var z = Input.GetAxisRaw("Vertical");
 
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Respawn")
         {
             print("Game over");
             transform.position = startPos;
